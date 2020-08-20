@@ -1,0 +1,68 @@
+LE WAGON - REACTE & REDUX COURSE
+***********************************************************
+***********************************************************
+
+Section 1: Tooling:
+***********************************************************
+Bundle, compile & compress server-side
+  Webpack - Tool that takes all of your JS and concatanates it into one file
+          - Webpack boilerplate         -> https://gist.github.com/ssaunier/0490d2093b9f72ba67024410bfb30915
+    cmd:  - yarn add webpack webpack-dev-server --dev
+    cmd:  - webpack-dev-server          - To run your webpack server
+    cmd:  - webpack -package            - cmd: to bundle your js files. Note if you use arrow functions you will need babel.
+
+  NPM     - Package Repository (equivalent of ruby gems)
+  yarn    - Package manager to install npm packages
+    cmd:  - yarn add <package_name> --dev
+          - packages are stored in package.json file which is the equivilent of gem file in ruby
+  ESLint  - JavaScript Styling tool/linter (dev dependency only)
+    cmd:  - yarn add eslint --dev
+    cmd:  - eslint --init
+              > use a popular style guide
+              > Airbnb                    (https://github.com/airbnb/javascript)
+              > Do you use React? Yes
+              > Store as JSON 
+          * Update file with the below:
+              # .eslintrc.json 
+              {   
+                "extends": "airbnb", # this line should already be here.  
+                "rules": {     
+                  "no-console": "off",     
+                  "comma-dangle": "off",     
+                  "quotes": "off",     
+                  "react/prop-types": 0,     
+                  "arrow-body-style": 0,     
+                  "space-before-function-paren": 0   
+                },   
+                "env": {     
+                  "browser": true   
+                } 
+              }
+  Babel     - Compiles your JS es6 down to JS es5.
+    cmd:  - yarn add babel-core babel-preset-es2015 --dev
+    cmd:  - echo '{ "presets": [ "es2015" ] }' > .babelrc 
+    cmd:  - yarn add babel-loader --dev # For webpack
+
+
+Section 2: React Basics: (Slide 13 contains the key details of React)
+***********************************************************
+  Setup New Project:
+    cmd:  - git clone git@github.com:lewagon/react-boilerplate.git <new_project_name>   - Clone the Repository
+          - change into the new project directory
+    cmd:  - rm -rf .git                                   - To remove boilerplates histroy
+    cmd:  - yarn install                                  - Install project dependencies
+    cmd:  - webpack-dev-server                            - To run your webpack server
+ 
+    For anything on the site that will change, you do not use props.
+    For anything on the site that WON'T change, you use props
+  
+    If an item just has props you can use props, but if you have state, then you 
+    need to use a class**
+      - Stateless components can be coded as functions
+      - Stateful components need to be promoted as classes
+        **  As a rule of thumb you can start by always using a class. Overtime,
+            you will begin to understand when it is and isn't necesary.
+  
+  React-Giphy Application:
+    - You will need one file per component
+  

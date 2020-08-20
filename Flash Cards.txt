@@ -1,0 +1,171 @@
+Section 1: Tooling
+******************************************************
+1)  When is the node_modules folder created and what is its purpose?
+
+  A:  node_modules is a folder created by your first yarn init or 
+      add. It stores all the project’s libraries you downloaded with 
+      yarn. Don’t forget to add it in your .gitignore.
+
+2)  Define a JS Arrow function square taking one parameter x.
+
+  A:  const square = (x) => {
+        return x * x;
+      };
+
+3)  How do you export a default function? How do you import it?
+
+  A:  To export a function by default, and simplify the import 
+      statement, you can do:
+      __________________________________________
+      // ./src/foo.js
+      function capitalize(word) {
+        return word[0].toUpperCase() + word.substr(1).toLowerCase();
+      }
+
+      export default capitalize;
+      __________________________________________
+      // ./src/bar.js
+      import capitalize from "./foo";
+
+      console.log(capitalize("boris"));
+
+4)  Which Package Manager do we use to download libraries from NPM?
+
+  A:  Yarn => It works with a package.json file you can bootstrap with:
+      
+      cmd:  yarn init
+      
+      Then you can use yarn add command to add libraries from NPM.
+
+5)  Why do you need to add Babel to Webpack?
+
+  A:  Babel is a JavaScript compiler which takes your ES6 code and 
+      transforms it into ES5 code, readable by older browsers and 
+      tools.
+
+      To add Babel to a Webpack project, run this in the terminal:
+
+      cmd:  yarn add babel-core babel-preset-es2015 --dev
+            echo '{ "presets": [ "es2015" ] }' > .babelrc
+            
+      cmd:  yarn add babel-loader --dev
+
+      And then open the webpack.config.js to add module key:
+      __________________________________________
+      // [...]
+      module: {
+        loaders: [{
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        }]
+      }
+
+6)  What is the main difference between var and let?
+
+  A:  var: variables are function scoped. They are only available inside 
+      the function where they are created.
+      let: (and also const) are scoped to the block. The variables 
+      won’t leak outside {}.
+
+7)  What is object destructuring?
+
+  A:  Destructuring is a convenient way of extracting multiple values 
+      from data stored in Objects and Arrays.
+      __________________________________________
+      const { twitter, facebook } = user.links.social;
+      console.log(twitter, facebook); // logs the 2 variables 
+
+8)  What is JavaScript main Package Repository?
+
+  A:  NPM: The equivalent in Ruby world would be Rubygems.
+
+9) Using Webpack, are functions defined in a file available in 
+    other files?
+
+  A:  No. By default, a function defined in foo.js is not available 
+      in another file bar.js. It’s not like when you download 
+      JavaScript files with a <script /> tag in your HTML, where 
+      everything is global and available.
+      
+      You have to export a function from the foo.js file and import 
+      it in bar.js to use it there.
+
+10)  What is Polyfill and why do we need it?
+
+  A:  Polyfill will add missing whole features in an older browser. 
+      The classical example is fetch. Some browsers don’t have it, 
+      so if you want to use it, you will polyfill it by importing a 
+      fetch implementation before using it.
+
+      It’s better to do that conditionaly, meaning you don’t want 
+      to re-declare fetch for Google Chrome where it’s already there.
+
+      And for that Polyfill.io is a great solution.
+
+11)  What is the responsibility of the package.json file?
+
+  A:  Similar to Ruby's Gemfile, A package.json file offers you great things:
+
+      - It serves as documentation for what packages your project 
+      depends on.
+      - It allows you to specify the versions of a package that your 
+      project can use using semantic versioning rules.
+      - It makes your build reproducible, which means that it’s much 
+      easier to share with other developers.
+
+12)  How can you debug JavaScript code?
+
+  A:  Use 'debugger' in the browser's inspector
+
+13)  Why should you add ./node_modules/.bin in your $PATH?
+
+  A:  By adding ./node_modules/.bin in your $PATH any binary command 
+      like webpack-dev-server added by a yarn dependency will work in 
+      your project regardless of your global setup.
+
+14)  What is the modern way of interpolating in ES6?
+
+  A:  You should use template literals: `I'm ${age} years old`
+
+15)  What is Webpack’s main goal?
+
+  A:  Webpack is a tool to bundle JavaScript files into a single one.
+
+      This way, you can have many JavaScript files to split your code 
+      in logical module, and let Webpack do the heavy lifting of 
+      concatenating, minifying (and more with plugins) your JavaScript 
+      code and make it available with a single HTTP request.
+
+16)  What is the main difference between const and let?
+
+  A:  The value stored in const cannot be reassigned but be careful, 
+      the value is still mutable.
+
+17)  How can you run JavaScript on your computer?
+
+  A: In your terminal with node filename.js or node (> Command line).
+
+18)  Which file should you edit to configure your linter?
+
+  A:  ESLint is designed to be completely configurable, meaning you 
+      can turn on/off every rule in .eslintrc.json.
+
+19)  How do you create the Webpack bundle for production?
+
+  A:  To create the JS bundle from your source files, you need to run:
+
+        cmd: webpack -p
+
+      Note that by default, Webpack will compile and uglify ES5. If 
+      you are using ES6 features like =>, it won’t work. You need Babel!
+
+20)  What tool can help you check the correct style & syntax of your JavaScript code?
+
+  A:  ESLint => To add to a project with an existing package.json, run:
+
+        cmd: yarn add eslint --dev
+        cmd: eslint --init
+
+      Then you can run eslint <filename>.js on a specific file to lint it.
+
