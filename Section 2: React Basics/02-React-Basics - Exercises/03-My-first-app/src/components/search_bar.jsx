@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 class SearchBar extends Component {
   handleUpdate = (event) => {
-    // will need to take this input and us it to search
-    console.log(event.target.value);
+    this.props.searchFunction(event.target.value);
   };
 
   render() {
