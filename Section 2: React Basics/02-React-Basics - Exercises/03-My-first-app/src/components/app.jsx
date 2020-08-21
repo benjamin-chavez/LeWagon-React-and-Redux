@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import giphy from 'giphy-api';
+
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
-import SelectedGif from './selected_gif';
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +30,12 @@ class App extends Component {
     );
   };
 
+  selectGiphy = (id) => {
+    this.setState({
+      selectedGifId: id,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -40,7 +46,10 @@ class App extends Component {
           </div>
         </div>
         <div className='right-scene'>
-          <GifList gifs={this.state.gifs} />
+          <GifList
+            gifs={this.state.gifs}
+            selectGiphyFunction={this.selectGiphy}
+          />
         </div>
       </div>
     );
