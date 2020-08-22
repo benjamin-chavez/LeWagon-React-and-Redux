@@ -169,3 +169,107 @@ Section 1: Tooling
 
       Then you can run eslint <filename>.js on a specific file to lint it.
 
+
+
+Section 2: React Basics
+***********************************************************
+
+1)  What steps should you follow to identify the component that owns a piece 
+    of state?
+
+  A:  React is all about one-way data flow down the component hierarchy. It may 
+      not be immediately clear which component should own what state.
+
+      Steps:
+      - Identify every component that depends on that state (check all render() methods).
+      - Find a common parent to all of them.
+
+      That component should carry this piece of state.
+
+2)  How should you update the state of a component?
+
+  A:  State of a component should be updated using this.setState().
+      
+      Anytime the state changes, the render() method is called back.
+
+3)  What is a React component?
+
+  A:  A React component is a collection of Javascript functions.
+      
+      They accept arbitrary inputs (called “props”) and return HTML describing what 
+      should appear on the screen. You can then reuse those independent components, 
+      assemble them to build complex UIs.
+
+4)  What is State and how is it used?
+
+  A:  The state is a Javascript mutable object which determine components rendering 
+      and behavior. State allows you to create components that are dynamic and interactive.
+
+5)  Describe with your own words what React is?
+
+  A:  React is a frontend Javascript library developed by Facebook in 2011. It follows the 
+      component based approach which helps in building reusable UI components.
+      
+      Design simple views for each state in your application, and React will efficiently 
+      update and render just the right components when your data changes.
+
+6)  What is JSX? WHy do we use it?
+
+  A:  JSX stands for JavaScript XML, it makes React more elegant and readable. It 
+      allows us to put HTML-like structures in the same file as you write Javascript 
+      code.
+
+7)  What is an SPA?
+
+  A:  A single-page application (SPA) is a web application that interacts with the user 
+      by dynamically rewriting the current page rather than loading entire new pages 
+      from the server.
+
+8)  In a React component is the render() function optional?
+
+  A:  No! Every class-based component must have a render() function. It’s the 
+      function that defines the HTML that is generated and injectd in the DOM by the 
+      component.
+
+      If more than one HTML element needs to be rendered, then they must be grouped 
+      together inside one enclosing tag such as <div>.
+
+9)  What is Props?
+
+  A:  Props is a Javascript object that stores component properties. They are 
+      immutable and always passed down from the parent to the child.
+
+10) Is JSX supported by any browser?
+
+  A:  No! You need to run your code through a transpiler like Babel to transform 
+      your JSX into a Javascript object.
+
+11) Can stateless components be coded as functions?
+
+  A:  Yes just like this:
+
+        const Hello = (props) => {
+          return <h1>Hello, {props.name}</h1>;
+        };
+        const helloBoris = <Hello name="Boris" />;
+
+12) How do you suscribe to an event on a React component?
+
+  A:  You can subscribe an HTML element to a DOM event by adding an on<Event> attribute 
+      and passing it the callback function.
+
+      Usually the callback function is defined within the component:
+
+        clickHandler = () => {
+          this.setState({ clicked: true });
+        }
+
+        render(){
+          return (
+            <div onClick={this.clickHandler}>Can be clicked!</div>
+          )
+        }
+
+
+      To make sure this refers to the component instance within the callback, 
+      make sure you define it with an arrow function!

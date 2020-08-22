@@ -66,3 +66,6 @@ Section 2: React Basics: (Slide 13 contains the key details of React)
   React-Giphy Application:
     - You will need one file per component
   
+
+Section 3: React Advanced
+***********************************************************
