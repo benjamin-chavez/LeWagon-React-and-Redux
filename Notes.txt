@@ -69,3 +69,4 @@ Section 2: React Basics: (Slide 13 contains the key details of React)
 
 Section 3: React Advanced
 ***********************************************************
+49 min

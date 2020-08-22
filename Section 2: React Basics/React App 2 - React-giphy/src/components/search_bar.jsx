@@ -1,11 +1,32 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     term: '',
+  //   };
+  // }
+  //
+  // handleUpdate = (event) => {
+  //   // Change the state of term
+  //   this.setState({
+  //     term: event.target.value,
+  //   });
+  //   this.props.searchFunction(event.target.value);
+  // };
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
+  }
+
   handleUpdate = (event) => {
     this.props.searchFunction(event.target.value);
   };
 
   render() {
+    console.log('SEAR_BAR RENDER');
     return (
       <input
         type='text'
