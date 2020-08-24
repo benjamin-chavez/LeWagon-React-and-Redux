@@ -273,3 +273,91 @@ Section 2: React Basics
 
       To make sure this refers to the component instance within the callback, 
       make sure you define it with an arrow function!
+
+
+
+Section 3: React Advanced
+***********************************************************
+1) What is the only lifecyle method called when a Component is 
+   removed from the DOM?
+
+  A:  componentWillUnmount()
+
+      This method allows us to do some cleanup before removing the 
+      Component from the UI stack.
+      
+2) Which file should you edit to build custom yarn commands?
+
+  A:  You can define scripts in the package.json which will be run 
+      in the command line when you invoke it with the yarn command.
+
+3) What are the different phases of the component’s lifecycle?
+
+  A:  - The component’s life starts when it’s inserted in the DOM (Mounting)
+      - Then it lives in the DOM and can re-render if it receives new 
+        props/state (it remains the same object)
+      - It dies when it is removed from the DOM (Unmounting)
+
+4) What should you do to deploy your front-end app on gh-pages?
+
+  A:  cmd:  yarn add gh-pages --dev    # add the module in your project.
+      cmd:  webpack -p                  # create your production bundle.
+      cmd:  gh-pages -d dist            # deploy it on Github Pages.
+
+5) What is a controlled component?
+
+  A:  Usually, the user action (keystroke, click, …) sets the value of
+      the input, and our program reads it before using it in an HTTP 
+      request.
+
+      A controlled component is when the user action triggers a 
+      setState() in the component, and it’s the React state that sets 
+      the value.
+
+      That way, the React state is the single source of truth for the 
+      input’s value.
+
+6)  Is the componentWillReceiveProps() function called on the initial 
+    rendering?
+
+  A:  No! componentWillReceiveProps() is a lifecycle method invoked 
+      only on updates, when new props are passed by its parent.
+
+7) Describe with your own words how React uses the virtual DOM?
+
+  A:  This Virtual DOM works in three simple steps:
+
+      - Whenever a component is about to change, all of its children 
+        are supposed to re-render.
+      - This operation is done on a virtual copy of the DOM to compute 
+        an actual diff between the two objects.
+      - The actual DOM is then updated with only the components whose 
+        display actually differ. This process is called reconciliation.
+
+8)  How do you fix that error: Each child in an array should have a 
+    unique 'key' prop?
+
+  A:  React needs a unique key to each component in order to optimize 
+      his rendering process.
+
+      We usually use ids like in the example below:
+
+      todos.map((todo) =>
+        return <li key={todo.id}>{todo.text}</li>
+      );
+
+9) Which functions are called when a component is mounted into the DOM?
+
+  A:  These methods are called when an instance of a component is being 
+      created and inserted into the DOM:
+
+      - constructor()
+      - componentWillMount()
+      - render()
+      - componentDidMount()
+
+10) What is the virtual DOM?
+
+  A:  The virtual DOM is a lightweight JavaScript object which 
+      originally is a the copy of the real DOM.
+
