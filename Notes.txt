@@ -69,4 +69,11 @@ Section 2: React Basics: (Slide 13 contains the key details of React)
 
 Section 3: React Advanced
 ***********************************************************
-49 min
+Container vs Component:
+  Does it need redux state access?
+    yes > Container
+    No > Will it create actions?
+      yes> Container
+      no> Component
+
+pick up at 42:49
