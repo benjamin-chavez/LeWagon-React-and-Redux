@@ -2,15 +2,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '!!html-loader!templates/index.html',
-    }),
+      template: '!!html-loader!templates/index.html'
+    })
   ],
   devtool: 'sourcemap',
   module: {
@@ -18,20 +17,20 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.s?css$/,
         exclude: /node_modules/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        loader: 'html-loader'
       },
-    ],
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: [ '.js', '.jsx' ]
+  }
 };

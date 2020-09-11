@@ -69,11 +69,22 @@ Section 2: React Basics: (Slide 13 contains the key details of React)
 
 Section 3: React Advanced
 ***********************************************************
-Container vs Component:
-  Does it need redux state access?
+
+
+Section 4: Reduc Basics
+***********************************************************
+    cmd:  - yarn install                                  - Install project dependencies
+    cmd:  - yarn add redux react-redux
+
+    cmd:  - mkdir src/actions
+    cmd:  - mkdir src/reducers
+    cmd:  - mkdir src/containers
+
+Container(smart) vs Component(dumb):
+    - A container is a react component which accesses the redux state.
+
+  Does it need redux state access (redux state tree)?
     yes > Container
     No > Will it create actions?
       yes> Container
       no> Component
-
-pick up at 42:49

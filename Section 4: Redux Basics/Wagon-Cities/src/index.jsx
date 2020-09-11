@@ -5,14 +5,12 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 // internal modules
-import '../assets/stylesheets/application.scss';
 import App from './components/app';
+import '../assets/stylesheets/application.scss';
 
-// Reducers
-import flatsReducer from './reducers/flats_reducer';
-
+// State and reducers
 const reducers = combineReducers({
-  flats: flatsReducer,
+  changeMe: (state = null, action) => state
 });
 
 // render an instance of the component in the DOM
@@ -20,5 +18,5 @@ ReactDOM.render(
   <Provider store={createStore(reducers)}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('root')
 );
