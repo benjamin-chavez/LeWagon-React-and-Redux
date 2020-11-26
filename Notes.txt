@@ -1,4 +1,4 @@
-LE WAGON - REACTE & REDUX COURSE
+LE WAGON - REACT & REDUX COURSE
 ***********************************************************
 ***********************************************************
 
@@ -49,7 +49,7 @@ Section 2: React Basics: (Slide 13 contains the key details of React)
   Setup New Project:
     cmd:  - git clone git@github.com:lewagon/react-boilerplate.git <new_project_name>   - Clone the Repository
           - change into the new project directory
-    cmd:  - rm -rf .git                                   - To remove boilerplates histroy
+    cmd:  - rm -rf .git                                   - To remove boilerplates history
     cmd:  - yarn install                                  - Install project dependencies
     cmd:  - webpack-dev-server                            - To run your webpack server
  
@@ -88,3 +88,6 @@ Container(smart) vs Component(dumb):
     No > Will it create actions?
       yes> Container
       no> Component
+
+Section 8: React in Rails:
+***********************************************************
