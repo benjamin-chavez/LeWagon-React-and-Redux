@@ -71,10 +71,10 @@ Section 3: React Advanced
 ***********************************************************
 
 
-Section 4: Reduc Basics
+Section 4: Redux Basics
 ***********************************************************
     cmd:  - yarn install                                  - Install project dependencies
-    cmd:  - yarn add redux react-redux
+    cmd:  - yarn add redux react-redux              - Only use if you are using the react boilerplate. This is already included in the le wagon react redux boilerplate.
 
     cmd:  - mkdir src/actions
     cmd:  - mkdir src/reducers
