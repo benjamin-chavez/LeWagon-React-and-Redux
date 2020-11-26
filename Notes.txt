@@ -89,5 +89,10 @@ Container(smart) vs Component(dumb):
       yes> Container
       no> Component
 
+Section 4: Redux Basics
+***********************************************************
+  cmd: - yarn add redux-logger
+  cmd: - yarn add redux-promise
+
 Section 8: React in Rails:
 ***********************************************************
