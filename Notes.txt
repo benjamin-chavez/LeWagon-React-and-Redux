@@ -80,6 +80,8 @@ Section 4: Redux Basics
     cmd:  - mkdir src/reducers
     cmd:  - mkdir src/containers
 
+    cmd:  - mkdir src/actions src/reducers src/containers
+
 Container(smart) vs Component(dumb):
     - A container is a react component which accesses the redux state.
 
@@ -93,6 +95,16 @@ Section 4: Redux Basics
 ***********************************************************
   cmd: - yarn add redux-logger
   cmd: - yarn add redux-promise
+
+
+Section 6: Plugins: Router & Form
+***********************************************************
+  cmd: - yarn add react-router-dom history
+  cmd: - yarn add redux-form
+
+  For more control, in the future look up:
+    - Redux Thunk
+    - Redux Saga
 
 Section 8: React in Rails:
 ***********************************************************
